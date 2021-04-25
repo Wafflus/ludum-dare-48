@@ -72,6 +72,16 @@ namespace Artistas
             ReceivedCall = null;
         }
 
+        public void SetNumber(string numberString)
+        {
+            if (onCall)
+            {
+                return;
+            }
+
+            numberText.text = numberString;
+        }
+
         public void OnType(int number)
         {
             OnNumberPressed.Invoke(number);
