@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CallTwo
   m_EditorClassIdentifier: 
   callerName: Test
-  callerNumber: 321
+  callerNumber: 321321321
   receiverName: 
   receiverNumber: 
   startingDialogue: {fileID: 11400000, guid: b74476a753c771d46a062d4ede870389, type: 2}

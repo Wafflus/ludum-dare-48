@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CallOne
   m_EditorClassIdentifier: 
   callerName: Random1
-  callerNumber: 123
+  callerNumber: 123123123
   receiverName: Random2
-  receiverNumber: 321
+  receiverNumber: 321321
   startingDialogue: {fileID: 11400000, guid: 0286194ddb42847459cddc74c8f8be75, type: 2}
