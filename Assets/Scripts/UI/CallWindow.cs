@@ -95,6 +95,11 @@ namespace Artistas
             StartCoroutine(ForceScrollDown());
         }
 
+        public void StopCall()
+        {
+            StopAllCoroutines();
+        }
+
         public IEnumerator SetNext(DialogueSO dialogue)
         {
             yield return new WaitForSeconds(5f);
