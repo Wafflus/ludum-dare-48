@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Artistas
 {
@@ -13,5 +12,8 @@ namespace Artistas
         [Header("Receiver Info")]
         public string receiverName;
         public string receiverNumber;
+
+        [Header("Dialogues")]
+        public DialogueSO startingDialogue;
     }
 }
