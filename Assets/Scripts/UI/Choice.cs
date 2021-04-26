@@ -26,10 +26,7 @@ namespace Artistas
                 UpdateChoiceColor();
             }
 
-            if (disableButton)
-            {
-                button.interactable = false;
-            }
+            UpdateButtonInteractable(!disableButton);
 
             button.onClick.AddListener(OnButtonClick);
         }
@@ -46,6 +43,11 @@ namespace Artistas
         private void UpdateChoiceColor()
         {
             choice.color = Color.green;
+        }
+
+        public void UpdateButtonInteractable(bool interactable)
+        {
+            button.interactable = interactable;
         }
     }
 }

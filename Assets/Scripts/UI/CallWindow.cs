@@ -24,9 +24,16 @@ namespace Artistas
             Clear();
 
             DialogueSO dialogue = call.startingDialogue;
+            DialogueSO currentDialogue = dialogue;
+
+            bool optionChosen = false;
 
             while (dialogue != null && dialogue.sent)
             {
+                currentDialogue = dialogue;
+
+                optionChosen = false;
+
                 Dialogue dialogueGameObject = CreateDialogue(dialogue);
 
                 List<ChoiceData> choices = dialogue.choices;
@@ -36,30 +43,51 @@ namespace Artistas
                     dialogue = dialogue.nextDialogue;
                 }
 
+                List<Choice> instantiatedChoices = new List<Choice>();
+
                 foreach (ChoiceData choice in choices)
                 {
-                    CreateChoice(dialogueGameObject, choice, true);
+                    Choice createdChoice = CreateChoice(dialogueGameObject, choice, true);
+
+                    instantiatedChoices.Add(createdChoice);
 
                     if (choice.chosen)
                     {
                         dialogue = choice.nextDialogue;
+
+                        optionChosen = true;
                     }
+                }
+
+                if (choices.Count > 0 && !optionChosen)
+                {
+                    foreach (Choice choice in instantiatedChoices)
+                    {
+                        choice.UpdateButtonInteractable(true);
+                    }
+
+                    break;
                 }
             }
 
             if (dialogue != null)
             {
-                StartCoroutine(SetNext(dialogue));
+                if (currentDialogue.choices.Count == 0 || optionChosen)
+                {
+                    StartCoroutine(SetNext(dialogue));
+                }
             }
 
             StartCoroutine(ForceScrollDown());
         }
 
-        private void CreateChoice(Dialogue dialogueGameObject, ChoiceData choice, bool disableChoice)
+        private Choice CreateChoice(Dialogue dialogueGameObject, ChoiceData choice, bool disableChoice)
         {
             Choice choiceGameObject = Instantiate(choicePrefab, dialogueGameObject.gameObject.transform).GetComponent<Choice>();
 
             choiceGameObject.Initialize(choice, disableChoice);
+
+            return choiceGameObject;
         }
 
         public void Next(DialogueSO dialogue)
