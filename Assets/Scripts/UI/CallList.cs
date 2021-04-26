@@ -5,8 +5,8 @@ namespace Artistas
 {
     public class CallList : MonoBehaviour
     {
-        [field: Header("Calls")]
-        [field: SerializeField] public List<Call> Calls { get; set; }
+        [Header("Calls")]
+        [SerializeField] private List<Call> calls;
 
         [Header("Prefabs")]
         [SerializeField] private GameObject callPrefab;
@@ -15,11 +15,11 @@ namespace Artistas
         {
             Clear();
 
-            foreach (Call call in Calls)
+            for (int i = calls.Count - 1; i >= 0; --i)
             {
                 CallEntry callEntry = Instantiate(callPrefab, transform).GetComponent<CallEntry>();
 
-                callEntry.Initialize(call);
+                callEntry.Initialize(calls[i]);
             }
         }
 
@@ -29,6 +29,11 @@ namespace Artistas
             {
                 Destroy(child.gameObject);
             }
+        }
+
+        public void AddToList(Call call)
+        {
+            calls.Add(call);
         }
     }
 }
