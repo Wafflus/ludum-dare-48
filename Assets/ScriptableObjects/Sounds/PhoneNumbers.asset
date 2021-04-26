@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4eb7bd856607f4a8361cb0f6ef024f, type: 3}
+  m_Name: PhoneNumbers
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 0b9a4e43496e4fd4da3281ccc9488487, type: 3}
+  - {fileID: 8300000, guid: 4c80f4427df362b4eaaf0f05678504ed, type: 3}
+  - {fileID: 8300000, guid: 57f455de57816ee4496f24dfc01946ab, type: 3}
+  - {fileID: 8300000, guid: 360ae94de53ac4e46a01294bb0c588bc, type: 3}
+  - {fileID: 8300000, guid: da6ce7d09fc84e24eb0688853824a5d7, type: 3}
+  - {fileID: 8300000, guid: dcafc8a64e7b2164c9c47d20fb8c37c6, type: 3}
+  - {fileID: 8300000, guid: 6ee3270976d635d4daa7111c0b8bb4a4, type: 3}
+  - {fileID: 8300000, guid: 72478579315f7e7489de2e8e45d830d3, type: 3}
+  - {fileID: 8300000, guid: e8d2cd0fc343c05468f5e11161617a9e, type: 3}
+  - {fileID: 8300000, guid: 24be21569981b624d98e376fab133811, type: 3}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbb05ff2a106bc4295b8ee17ec51f52, type: 3}
+  m_Name: Ten
+  m_EditorClassIdentifier: 
+  senderName: Sara
+  text: 'I... I don''t know... I think she started bringing them around three months
+    ago.
+
+
+    Just the other day, a day before her disappearence, she bought me
+    some.'
+  nextDialogue: {fileID: 11400000, guid: 510d0c3cc999d574dbba1d19e16971a9, type: 2}
+  action:
+    m_PersistentCalls:
+      m_Calls: []
+  choices: []
+  sent: 0
+  <Enabled>k__BackingField: 1

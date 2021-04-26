@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbb05ff2a106bc4295b8ee17ec51f52, type: 3}
+  m_Name: One
+  m_EditorClassIdentifier: 
+  senderName: Police
+  text: 'Sure, detective.
+
+
+    The number of Hope mother, Sara, is 333 444 555.'
+  nextDialogue: {fileID: 11400000, guid: e73b5e039f8d83e4cb5ddb569da732ac, type: 2}
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 7d5e3a9e24f305545a3ba50e75ea2968, type: 2}
+        m_TargetAssemblyTypeName: Artistas.NPC, Assembly-CSharp
+        m_MethodName: UnlockContact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  choices: []
+  sent: 0
+  <Enabled>k__BackingField: 1
