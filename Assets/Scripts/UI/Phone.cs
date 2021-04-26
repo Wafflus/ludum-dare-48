@@ -54,8 +54,6 @@ namespace Artistas
             OnCallAccepted.Invoke(ReceivedCall);
 
             onCall = true;
-
-            ReceivedCall = null;
         }
 
         public void RefuseCall()
