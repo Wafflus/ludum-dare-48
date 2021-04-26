@@ -16,21 +16,23 @@ namespace Artistas
 
         public void SetCallDialogues(Call call)
         {
+            Clear();
+
             if (call.startingDialogue == null)
             {
                 return;
             }
 
-            Clear();
-
             DialogueSO dialogue = call.startingDialogue;
             DialogueSO currentDialogue = dialogue;
 
             bool optionChosen = false;
+            bool first = true;
 
             while (dialogue != null && dialogue.sent)
             {
                 currentDialogue = dialogue;
+                first = false;
 
                 optionChosen = false;
 
@@ -72,7 +74,7 @@ namespace Artistas
 
             if (dialogue != null)
             {
-                if (currentDialogue.choices.Count == 0 || optionChosen)
+                if (currentDialogue.choices.Count == 0 || optionChosen || first)
                 {
                     StartCoroutine(SetNext(dialogue));
                 }
@@ -113,6 +115,8 @@ namespace Artistas
 
             dialogue.sent = true;
 
+            dialogue.action.Invoke();
+
             if (choices.Count == 0)
             {
                 dialogue = dialogue.nextDialogue;
@@ -130,7 +134,7 @@ namespace Artistas
 
         public IEnumerator SetNext(DialogueSO dialogue)
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(Random.Range(3, 5f));
 
             Next(dialogue);
         }

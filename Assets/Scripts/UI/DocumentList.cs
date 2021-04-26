@@ -5,8 +5,8 @@ namespace Artistas
 {
     public class DocumentList : MonoBehaviour
     {
-        [field: Header("Documents")]
-        [field: SerializeField] public List<DocumentSO> Documents { get; set; }
+        [Header("Documents")]
+        [SerializeField] private List<DocumentSO> documents;
 
         [Header("Prefabs")]
         [SerializeField] private GameObject documentPrefab;
@@ -15,11 +15,11 @@ namespace Artistas
         {
             Clear();
 
-            foreach (DocumentSO document in Documents)
+            for (int i = documents.Count - 1; i >= 0; --i)
             {
                 DocumentEntry documentEntry = Instantiate(documentPrefab, transform).GetComponent<DocumentEntry>();
 
-                documentEntry.Initialize(document);
+                documentEntry.Initialize(documents[i]);
             }
         }
 
@@ -29,6 +29,11 @@ namespace Artistas
             {
                 Destroy(child.gameObject);
             }
+        }
+
+        public void AddToList(DocumentSO document)
+        {
+            documents.Add(document);
         }
     }
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2d53b09a05c4549b1332f0edb5d771, type: 3}
+  m_Name: HarperCall
+  m_EditorClassIdentifier: 
+  callerName: You
+  callerNumber: 222222222
+  receiverName: Harper
+  receiverNumber: 993543234
+  startingDialogue: {fileID: 11400000, guid: cc7ffa86dca363146ba612528d99f7ca, type: 2}

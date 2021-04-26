@@ -37,6 +37,8 @@ namespace Artistas
 
             currentChoice.chosen = true;
 
+            currentChoice.onChosen.Invoke();
+
             UpdateChoiceColor();
         }
 

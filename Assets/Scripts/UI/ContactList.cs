@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,11 +12,6 @@ namespace Artistas
 		[Header("UI Elements")]
 		[SerializeField] private GameObject contactListUIParent;
 		[SerializeField] private GameObject emptyContactListEntryPrefab;
-
-		public void Start()
-		{
-			UpdateContactListUI();
-		}
 
 		public void UpdateContactListUI()
 		{

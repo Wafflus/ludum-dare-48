@@ -9,6 +9,10 @@ namespace Artistas
         [Header("UI")]
         [SerializeField] private TextMeshProUGUI numberText;
 
+        [Header("Call")]
+        [SerializeField] private Call firstCall;
+        [SerializeField] private CallSwitcherSO callSwitcher;
+
         [Header("Call Events")]
         [SerializeField] private UnityEvent<Call> OnCallSent;
         [SerializeField] private UnityEvent<Call> OnCallReceived;
@@ -21,6 +25,11 @@ namespace Artistas
         public Call ReceivedCall { private get; set; }
 
         private bool onCall;
+
+        private void Start()
+        {
+            ReceiveCall(firstCall);
+        }
 
         public void SendCall(Call call)
         {
@@ -63,11 +72,45 @@ namespace Artistas
                 return;
             }
 
+            if (!onCall)
+            {
+                return;
+            }
+
             OnCallRefused.Invoke(ReceivedCall);
 
             onCall = false;
 
             ReceivedCall = null;
+        }
+
+        public void Interact()
+        {
+            if (ReceivedCall == null)
+            {
+                if (numberText.text.Length == 9)
+                {
+                    Call call = callSwitcher.GetCall(numberText.text);
+
+                    if (call == null)
+                    {
+                        return;
+                    }
+
+                    SendCall(call);
+                }
+
+                return;
+            }
+
+            if (onCall)
+            {
+                RefuseCall();
+
+                return;
+            }
+
+            AcceptCall();
         }
 
         public void SetNumber(string numberString)
